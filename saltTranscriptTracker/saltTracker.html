@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="textParser.js" type="text/JavaScript"></script>
+    <link rel="stylesheet" href="saltTrackerStylesheet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moul&display=swap" rel="stylesheet">
+</Head>
+
+<div class="topnav">
+    <div class="floatingTab">
+        <a href="../index.html" class="buttonblock">HOME</a>
+      </div>
+      <div class="floatingTab">
+        <a href="../aboutMe.html" class="buttonblock">ABOUT</a>
+      </div>
+      <div class="floatingTab">
+        <a href="../projects.html" class="buttonblock">PROJECTS</a>
+      </div>
+      <div class="floatingTab">
+        <a href="../experience.html" class="buttonblock">EXPERIENCE</a>
+      </div>
+      <div class="floatingTab">
+        <a href="../contactMe.html" class="buttonblock">CONTACT ME </a>
+      </div>
+      <div class="floatingTab">
+        <a href="saltTracker.html" class="buttonblock">* saltTracker *</a>
+      </div>
+    </div>
+ </div>
+
+<div class = "form">
+    <form>
+        <label for="textBox">Salt Tracker:</label>
+        <textarea id=textBox class = textBox name=textBox rows="30" cols="60" wrap ="off" contenteditable="true">
+Insert your tran/'script.
+          </textarea>
+        <input type="button" value="Submit" onclick="parser()">
+
+        How to Use: Copy and paste your text into the text box
+        for the code to parse the SALT transcription.<br>
+        Ensure the client utterances start with the conventional 'C' notation.<br>
+        Ensure the leftmost character is the speaker notation.<br>
+        The program is not case sensitive.
+
+
+    </form>
+</div>
+<br>
+<div id = "tablediv">
+    <table id = "table">
+        <tr>
+            <th>Bound Morphemes</th>
+            <th>Count</th>
+        </tr>
+        <tr>
+            <td>Plural</td>
+            <td id="plural"></td>
+        </tr>
+        <tr>
+            <td>Possessive Inflection</td>
+            <td id="possInflection">****</td>
+        </tr>
+        <tr>
+            <td >Plural And Inflection</td>
+            <td id="pluralAndInflection">****</td>
+        </tr>
+        <tr>
+            <td >Third Person Singular</td>
+            <td id="thirdPersonSingular">****</td>
+        </tr>
+        <tr>
+            <td >Past Tense</td>
+            <td id="pastTense">****</td>
+        </tr>
+        <tr>
+            <td >Past Participle</td>
+            <td id="pastParticiple">****</td>
+        </tr>
+        <tr>
+            <td >Progressive Verb</td>
+            <td id="progressiveVerb">****</td>
+        </tr>
+        <tr> 
+            <td >Negative Contraction</td>
+            <td id="negativeContractions">****</td>
+        </tr>
+        <tr> 
+            <td >Contracted</td>
+            <td id="contracted">****</td>
+        </tr>
+
+    </table>
+</div>
+<br>
+<div id = "tablediv">
+    <table id ="table">
+        <tr>
+            <th colspan="2">Word and Morpheme Summary</th>
+        </tr>
+        <tr>
+            <th>Variables</th>
+            <th>Count</th>
+        </tr>
+        <tr>
+            <td>Examiner Utterances</td>
+            <td id="examinerUtterances"> ****</td>
+        </tr>
+        <tr>
+            <td>Total Morphemes</td>
+            <td id="totalMorphemes"> ****</td>
+        </tr>
+        <tr>
+            <td>Client/Child Utterances</td>
+            <td id="clientUtterances">****</td>
+        </tr>
+        <tr>
+            <td >MLU in Morphemes</td>
+            <td id="mlu">****</td>
+        </tr>
+        <tr>
+            <td >Brown's Stage</td>
+            <td id="brownsStage">****</td>
+        </tr>
+        <tr>
+            <td >Expected Age Range</td>
+            <td id="ageRange">****</td>
+        </tr>
+        <tr>
+            <td >Bound Morphemes</td>
+            <td id="boundMorphemes">****</td>
+        </tr>
+        <tr>
+            <td >Maze Words</td>
+            <td id="mazeWords"> **** </td>
+        </tr>
+        <tr> 
+            <td >Omitted Words </td>
+            <td id="omittedWords">****</td>
+        </tr>
+        <tr> 
+            <td >Ommitted Bound Morphemes</td>
+            <td id="omittedBoundMorphemes">* Coming Soon *</td>
+        </tr>
+
+    </table>
+</div>
+<br>
+plural
+possInflection
+pluralAndInflection
+thirdPersonSingular
+pastTense
+pastParticiple
+progressiveVerb
+negativeContractions
+
+</html>

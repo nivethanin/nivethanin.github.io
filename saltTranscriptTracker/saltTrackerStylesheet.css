@@ -1,0 +1,105 @@
+body{
+  background-color:  lightgrey;
+ }
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: dotted;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(206, 206, 206);
+  color: black;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 99%;
+    padding: 10px;
+    border: 1px solid;
+  }
+  
+  #table td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: rgb(145, 145, 145);}
+  
+#tablediv{
+    padding-left: 10px;
+      background-color:  #DCDCDC;
+  
+}
+
+div.form{
+    border-radius: 25px;
+    background: grey;
+    padding: 14px 20px; 
+    width: 95%;
+    height: 150%;
+    position: relative;
+    margin: 8px 0;
+    text-align: center;
+  }
+
+
+  #textBox{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  label {
+    color: black;
+    font-weight: bolder;
+    display: block;
+    text-align: center;
+    font-family: 'Moul', cursive;
+    font-size: 40px;
+  }
+
+  input {
+      display: block;
+    width: 100%;
+    background-color: #12ac17;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+  }
+
+
+   

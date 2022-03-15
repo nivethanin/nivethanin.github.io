@@ -1,2 +1,2 @@
-# nivethanin.github.io
- Personal page for a course
+# PersonalPage
+ My personal website in development for a web development course through Algoma University
