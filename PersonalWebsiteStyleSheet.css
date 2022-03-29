@@ -1,21 +1,46 @@
-.home {
-  background-image: url('coffee.jpeg');
+body, html {
   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: lighten;
+  font-family: 'Moul', cursive;
+  font-family: 'Poppins', sans-serif;
+  background-color: grey ;
 }
 
-.homeText{
+.home {
+  height: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("IMG_4681.JPG");
+
+  /* Full height */
+
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#homeText{
   position: relative;
-  color:rgba(203, 218, 203, 5);
+  color:rgb(245, 245, 245);
   left: 20px;
-  top: 77%;
-  font-size: 50px;
+  top: 45%;
+  font-size: 80px;
   font-style: italic;
   font-family: 'Moul', cursive;
   font-family: 'Poppins', sans-serif;
+}
+
+#homeBeg{
+  position: relative;
+  color:black;
+  left: 20px;
+  top: 40%;
+  font-size: 20px;
+  font-style: italic;
+}
+
+span.shortBlurb {
+
+  color: #eaeefa;
+  
 }
 
 
@@ -61,19 +86,9 @@ vertical-align: bottom;
   padding-top: 60px;
 }
 
-
 /* Change the color of links on hover */
 
 
-
-body, html {
-    height: 100%;
-    font-family: 'Moul', cursive;
-    font-family: 'Poppins', sans-serif;
-    background-color: grey ;
-    padding:12px;
-  }
-  
 
 
 .projects{
