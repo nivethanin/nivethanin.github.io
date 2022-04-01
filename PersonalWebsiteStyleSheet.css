@@ -6,10 +6,11 @@ body, html {
 }
 
 .home {
-  height: 150%;
+  height: center;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("IMG_4681.JPG");
+
+  background-image: url("images/Pattern.png");
 
   /* Full height */
 
@@ -19,10 +20,13 @@ body, html {
 
 #homeText{
   position: relative;
-  color:rgb(245, 245, 245);
-  left: 20px;
-  top: 45%;
-  font-size: 80px;
+  color:rgb(5, 5, 5);
+  vertical-align: bottom;
+  top:15vw;
+  text-align: center;
+  /* Viewport is the browser window size this 
+  will allow the text to be more responsive to cellphones*/
+  font-size: 10vw;
   font-style: italic;
   font-family: 'Moul', cursive;
   font-family: 'Poppins', sans-serif;
@@ -31,15 +35,16 @@ body, html {
 #homeBeg{
   position: relative;
   color:black;
-  left: 20px;
-  top: 40%;
-  font-size: 20px;
+
+  text-align: center;
+  top: 15vw;
+  font-size: 3vw;
   font-style: italic;
 }
 
 span.shortBlurb {
 
-  color: #eaeefa;
+  color: #0d0d0e;
   
 }
 
