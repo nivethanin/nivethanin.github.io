@@ -5,12 +5,27 @@ body, html {
   background-color: grey ;
 }
 
+body#experience, html#experience{
+background-image: url("/Images/pattern3.jpg");
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+body#home, html#home{
+  background-image: url("/Images/coffee.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+
 .home {
   height: center;
   background-position: center;
   background-repeat: no-repeat;
-
-  background-image: url("images/Pattern.png");
 
   /* Full height */
 
@@ -20,7 +35,7 @@ body, html {
 
 #homeText{
   position: relative;
-  color:rgb(5, 5, 5);
+  color:white;
   vertical-align: bottom;
   top:15vw;
   text-align: center;
@@ -34,8 +49,7 @@ body, html {
 
 #homeBeg{
   position: relative;
-  color:black;
-
+  color:lightblue;
   text-align: center;
   top: 15vw;
   font-size: 3vw;
@@ -44,7 +58,7 @@ body, html {
 
 span.shortBlurb {
 
-  color: #0d0d0e;
+  color: white;
   
 }
 
@@ -55,8 +69,13 @@ vertical-align: bottom;
 }
 
 h3{
-text-align:center;
-vertical-align: bottom;
+color: black;
+    font-weight: bolder;
+    display: block;
+    text-align: center;
+    font-family: 'Moul', cursive;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -91,10 +110,8 @@ vertical-align: bottom;
   padding-top: 60px;
 }
 
-/* Change the color of links on hover */
 
-
-
+/*Projects*/
 
 .projects{
   height: 100%;
@@ -103,3 +120,157 @@ vertical-align: bottom;
   background-size: cover;
   background: rgba(203, 218, 203, 0.3);
 }
+
+
+
+.projectPic{
+height: 100%;
+width: 30vw;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 1000px) {
+  .flex-container {
+    flex-direction: column;
+    align-content: center;
+  }
+  .flex-item1, .flex-item2, .flex-item3 {
+    flex: 100%;
+  }
+
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.descrip {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+
+
+/* Contact*/
+#mailForm{
+  border-radius: 25px;
+    background: lightgrey;
+    padding: 14px 20px; 
+    height: 10;
+    position: relative;
+    margin: 8px 0;
+    text-align: left;
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#mailFormLabel{
+color: black;
+    font-weight: bolder;
+    display: block;
+    text-align: center;
+    font-family: 'Moul', cursive;
+    font-size: 30px;
+}
+
+#messageBox{
+  width:100%;
+}
+
+.button2 {background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+width: 49%}
+.button3 {background-color: darkgrey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 49%
+}
+
+/* Experience */
+
+li{ 
+line-height: 24px; border-bottom: 1px solid #ccc; 
+}
+h6{
+  font-size: 150%;
+
+}
+
+h1 { 
+  font-size: 48px; 
+  text-transform: uppercase; 
+  letter-spacing: 3px;
+ }
+h5,h4 { 
+font-size: 122%; 
+font-weight: bold;
+}
+p { font-size: 100%; line-height: 18px; padding-right: 3em; }
+.section .details{width:80.2%;}
+.subheadings{width:12.3%;}
+
+.job { position: relative;
+   margin-bottom: 1em; 
+   padding-bottom: 1em;
+    border-bottom: 1px solid #ccc; }
+.job h4 { 
+  position: absolute; 
+  top: 0.35em; 
+  right: 0 }
+.job p { margin: 0.75em 0 3em 0; }
+
+.skills-list ul { margin: 0; }
+.skills-list li { 
+  margin: 3px 0; 
+  padding: 3px 0; 
+}
+.skills-list li span { 
+  font-size: 152%; 
+  display: block; 
+  margin-bottom: -2px; 
+  padding: 0 
+}
+.talent { 
+  width: 32%; 
+  float: left 
+}
+.talent h2 { margin-bottom: 6px; }

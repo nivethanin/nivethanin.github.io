@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Moul&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Moul&family=Poppins&display=swap" rel="stylesheet">
 
 </head>
 
@@ -41,21 +42,25 @@
   
  <div class="contact">
     <h3>CONTACT ME</h3>
-    <p>In construction...</p>
+    <div id="links"> 
+    <a href="https://www.linkedin.com/in/nivethanin/"><button class="button2">LinkedIn</button></a>
+    <a href="https://github.com/nivethanin/nivethanin.github.io"><button class="button3">GitHub</button></a>
+    </div>
  </div>
-<div>
+
+
+<div id="mailForm">
+  <Label id="mailFormLabel"> Email Me!</Label>
   <form action="/php/mailSender.php" method="post">
     First Name: <input type="text" name="first_name"><br>
     Last Name: <input type="text" name="last_name"><br>
-    Email: <input type="text" name="email"><br>
-    Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+    Email: <input type="text" name="email" id="emailText" onblur="validator()"><br> <div id="validate"> </div>
+    Message:<br><textarea rows="5" name="message" id= "messageBox" cols="30"></textarea><br>
     <input type="submit" name="submit" value="Submit">
     </form>    
 </div>
 
-
+<script src="/js/PersonalWebsite.js"></script>
 </body>
-  
-  <div class="footer">
-    <h2>Footer</h2>
-  </div>
+
+</html>

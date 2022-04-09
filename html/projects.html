@@ -1,52 +1,92 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-<title>NivsPersonalPage</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/css/PersonalWebsiteStyleSheet.css">
-<script src="/js/PersonalWebsite.js"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Moul&display=swap" rel="stylesheet">
+<head>
+  <title>NivsPersonalPage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/PersonalWebsiteStyleSheet.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/js/PersonalWebsite.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Moul&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Moul&family=Poppins&display=swap" rel="stylesheet">
+
 
 </head>
 
 <body>
 
-<div class="topnav">
+  <div class="topnav">
     <div class="floatingTab">
-        <a href="/index.html" class="buttonblock">HOME</a>
+      <a href="/index.html" class="buttonblock">HOME</a>
+    </div>
+    <div class="floatingTab">
+      <a href="aboutMe.html" class="buttonblock">ABOUT</a>
+    </div>
+    <div class="floatingTab">
+      <a href="projects.html" class="buttonblock">PROJECTS</a>
+    </div>
+    <div class="floatingTab">
+      <a href="experience.html" class="buttonblock">EXPERIENCE</a>
+    </div>
+    <div class="floatingTab">
+      <a href="contactMe.html" class="buttonblock">CONTACT ME </a>
+    </div>
+    <div class="floatingTab">
+      <a href="/saltTranscriptTracker/saltTracker.html" class="buttonblock">* saltTracker *</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="projects">
+    <h3>PROJECTS</h3>
+    <div class="flex-container">
+
+
+
+
+      <div class="flex-item1">
+        <button type="button" class="collapsible" id="collapsible" onclick="collapser()"><img name="personalPagePic" src="/Images/personalPagePic.png" id="pic1" class="projectPic"></button>
+        <div class="descrip">
+          <p>This personal website was made by me from scratch! It was made using HTML, CSS, Javascript (with some JQUERY), and some PHP for email handling.
+          You can see the source code for this on my GitHub. This was made as a final project for my web development course at Algoma University.</p>
+        </div>
+
       </div>
-      <div class="floatingTab">
-        <a href="aboutMe.html" class="buttonblock">ABOUT</a>
+
+      <div class="flex-item2">
+        
+        <button type="button" class="collapsible" id="f" onclick="collapser()"><img name="saltTrackerPic" src="/Images/saltTrackerPic.png" id="pic2" class="projectPic"></button>
+        <div class="descrip">
+          <p>The Salt Tacker is a project I actually completed as I was learning javascript for said web development course. It parses transcripts made by speech language pathologists 
+            during patient examinations and tracks several attributes of text and processes the numbers into scores that are used for patient diagnosis. It is fully functional and is being used by speech language pathology graduate students at the University of Toronto currently.
+          I have it linked in the header bar here, so please check it out! It runs on javascript. Source code available on GitHub. </p>
+        </div>
       </div>
-      <div class="floatingTab">
-        <a href="projects.html" class="buttonblock">PROJECTS</a>
-      </div>
-      <div class="floatingTab">
-        <a href="experience.html" class="buttonblock">EXPERIENCE</a>
-      </div>
-      <div class="floatingTab">
-        <a href="contactMe.html" class="buttonblock">CONTACT ME </a>
-      </div>
-      <div class="floatingTab">
-        <a href="/saltTranscriptTracker/saltTracker.html" class="buttonblock">* saltTracker *</a>
+
+
+      <div class="flex-item3">
+        <button type="button" class="collapsible" id="collapsible" onclick ="collapser()"><img name="patternQuizPic" src="/Images/patternQuizPic.png" id="pic3"
+            class="projectPic"> </button>
+        <div class="descrip">
+          After sending in the Salt Tracker, I am currently developing a quiz for a lab in the University of Toronto'
+          speech language pathology department. The website is not up yet and source code will not be made available until the tests are complete. Currently we are building it on the react framework using and agile methodology.
+
+        </div>
+        
+
       </div>
     </div>
- </div>
-  
- <div class="projects">
-    <h3>PROJECTS</h3>
-    <p> In construction...</p>
- </div>
-
-
-
-</body>
-  
-  <div class="footer">
-    <h2>Footer</h2>
   </div>
+
+
+
+
+  <script src="/js/PersonalWebsite.js"></script>
+</body>
+
+</html>

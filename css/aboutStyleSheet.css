@@ -3,11 +3,17 @@ body, html {
     font-family: 'Moul', cursive;
     font-family: 'Poppins', sans-serif;
     background-color: grey ;
+    background-image: url("/Images/Pattern.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
 .flex-container {
     display: flex;
     top: 200%;
+    flex-direction: row;
 }
 
 .flex-child {
@@ -17,8 +23,27 @@ body, html {
 
 }  
 
+
 .flex-child:first-child {
     margin-right: 20px;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .flex-child {
+    text-align: left;
+    font-size: 4vw;
+
+}  
+}
+
+h3{
+  font-family: 'Moul', cursive;
+font-family: 'Poppins', sans-serif;
+font-size:8vw;
+text-align: center;
 }
 
 #nivPic{
