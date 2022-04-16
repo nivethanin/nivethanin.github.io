@@ -26,9 +26,6 @@ body#home, html#home{
   height: center;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Full height */
-
   background-attachment: fixed;
   background-size: cover;
 }
@@ -39,8 +36,6 @@ body#home, html#home{
   vertical-align: bottom;
   top:15vw;
   text-align: center;
-  /* Viewport is the browser window size this 
-  will allow the text to be more responsive to cellphones*/
   font-size: 10vw;
   font-style: italic;
   font-family: 'Moul', cursive;
@@ -77,14 +72,13 @@ color: black;
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
 }
-/* Add a black background color to the top navigation */
+
 .topnav {
   background-color: #333;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -134,7 +128,7 @@ width: 30vw;
 }
 
 
-/* Responsive layout - makes a one column layout instead of a two-column layout */
+
 @media (max-width: 1000px) {
   .flex-container {
     flex-direction: column;
