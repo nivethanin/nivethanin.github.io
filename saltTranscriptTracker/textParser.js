@@ -1,61 +1,35 @@
-var plural = 0;
-var possInflection = 0;
-var pluralAndInflection = 0;
-var thirdPersonSingular = 0;
-var pastTense = 0;
-var pastParticiple = 0;
-var progressiveVerb = 0;
-var negativeContractions = 0;
-var contracted = 0;
-var ommittedWords = 0;
+let plural = 0;
+let possInflection = 0;
+let pluralAndInflection = 0;
+let thirdPersonSingular = 0;
+let pastTense = 0;
+let pastParticiple = 0;
+let progressiveVerb = 0;
+let negativeContractions = 0;
+let contracted = 0;
+let ommittedWords = 0;
 
-var numLines = 0;
-var examinerUtterances = 0;
-var clientUtterances = 0;
-var totalMorphemes = 0;
+let numLines = 0;
+let examinerUtterances = 0;
+let clientUtterances = 0;
+let totalMorphemes = 0;
 
 let boundMorphemes = 0;
 let mazeWords = 0;
 
 let actionStatements = 0;
 
+let mlu = 0;
+let brownsStage = '';
+let ageRange = '';
 
-function parser() {
-    let fullDocument = document.getElementById("textBox").value;
-    //splits the text into an array for each line
-    let lines = fullDocument.split("\n");
 
-    // checks if each line is a child utterance or examiner utterance
-    lines.forEach(function (entry) {
-        numLines++;
-        if (entry.toLowerCase().charAt(0) == 'c' && 
-        entry.toLowerCase().charAt(entry.length-1) != 'q' &&
-        entry.toLowerCase().charAt(entry.length-2) != 'q'){
-            clientUtterances++; // increment child utterance
-            boundOmmittedMorphemeParser(entry); //checks for double morphemes
-            mazeWordCounter(entry);
-            actionStatementCounter(entry);
 
-            var clientMorphemePerLine = entry.split(" "); // counts total morphemes
 
-            //adds to the  child morpheme count per line and subtracts one to account for
-            //the speaker indication (examiner or child)
-            totalMorphemes += clientMorphemePerLine.length - 1;
-        }
-
-        // increments examiner utterances
-        else if (entry.toLowerCase().charAt(0) == 'e') {
-            examinerUtterances++;
-        }
-
-    });
-
-    results();
-}
 
 function boundOmmittedMorphemeParser(text) {
     for (var i = 0; i < text.length; i++) {
-        if (text.charAt(i) === '*'){
+        if (text.charAt(i) === '*') {
             ommittedWords++;
             totalMorphemes--;
         }
@@ -80,13 +54,7 @@ function boundOmmittedMorphemeParser(text) {
                 case 'n': negativeContractions++; break;
 
                 case '’':
-                    if (text.toLowerCase().charAt(i + 2) == 'l' ||
-                        text.toLowerCase().charAt(i + 2) == 'm' ||
-                        text.toLowerCase().charAt(i + 2) == 'd' ||
-                        text.toLowerCase().charAt(i + 2) == 'r' ||
-                        text.toLowerCase().charAt(i + 2) == 's' ||
-                        text.toLowerCase().charAt(i + 2) == 'u' ||
-                        text.toLowerCase().charAt(i + 2) == 'v') {
+                    if (['l', 'm', 'd', 'r', 's', 'u', 'v'].includes(text.toLowerCase().charAt(i + 2))) {
                         contracted++; break;
                     }
                     else if (text.toLowerCase().charAt(i + 2) == 't') {
@@ -95,13 +63,7 @@ function boundOmmittedMorphemeParser(text) {
                     else break;
 
                 case '\'':
-                    if (text.toLowerCase().charAt(i + 2) == 'l' ||
-                        text.toLowerCase().charAt(i + 2) == 'm' ||
-                        text.toLowerCase().charAt(i + 2) == 'd' ||
-                        text.toLowerCase().charAt(i + 2) == 'r' ||
-                        text.toLowerCase().charAt(i + 2) == 's' ||
-                        text.toLowerCase().charAt(i + 2) == 'u' ||
-                        text.toLowerCase().charAt(i + 2) == 'v') {
+                    if (['l', 'm', 'd', 'r', 's', 'u', 'v'].includes(text.toLowerCase().charAt(i + 2))) {
                         contracted++; break;
                     }
                     else if (text.toLowerCase().charAt(i + 2) == 't') {
@@ -117,53 +79,61 @@ function boundOmmittedMorphemeParser(text) {
     }
 }
 
-function mazeWordCounter(text){
+function mazeWordCounter(text) {
     let inBracket = false;
     for (var i = 0; i < text.length; i++) {
-        if (text.charAt(i) == '('){
+        if (text.charAt(i) == '(') {
             inBracket = true;
             mazeWords++;
+            //adds base maze word
         }
 
         if (text.charAt(i) == ')')
             inBracket = false;
 
-        if (inBracket && text.charAt(i)==' ')
+        if (inBracket && text.charAt(i) == ' ')
             mazeWords++;
+        //increments maze words for every space
     }
 }
 
-function actionStatementCounter(text){
+function actionStatementCounter(text) {
     let inCurlyBrace = false;
     for (var i = 0; i < text.length; i++) {
-        if (text.charAt(i) == '{'){
+        if (text.charAt(i) == '{') {
             inCurlyBrace = true;
             actionStatements++;
+            //adds the base action statement
         }
 
         if (text.charAt(i) == '}')
             inCurlyBrace = false;
 
-        if (inCurlyBrace && text.charAt(i)==' ')
-        actionStatements++;
+        if (inCurlyBrace && text.charAt(i) == ' ')
+            actionStatements++;
+        //increments the action statement for every space
     }
 }
 
-function results() {
-    //total double morphemes
+function boundMorphemeCalc() {
     boundMorphemes = plural + possInflection + pluralAndInflection +
         thirdPersonSingular + pastTense + pastParticiple +
         progressiveVerb + negativeContractions + contracted;
+    //total double morphemes
+}
 
+function totalMorphemeCalc() {
     totalMorphemes = boundMorphemes + totalMorphemes - mazeWords - actionStatements;
 
+}
+
+function mluCalc() {
     // calculate MLU then represent it with two decimal places
-    let mlu = totalMorphemes / clientUtterances;
+    mlu = totalMorphemes / clientUtterances;
     mlu = (Math.round(mlu * 100) / 100).toFixed(2);
+}
 
-    let brownsStage = '';
-    let ageRange = '';
-
+function brownsStageAgeCalc() {
     switch (true) {
         case (1 <= mlu && mlu < 2.0):
             brownsStage = 'Stage I';
@@ -194,6 +164,15 @@ function results() {
             ageRange = 'Invalid';
             break;
     }
+}
+
+function results() {
+
+    boundMorphemeCalc();
+    totalMorphemeCalc();
+    mluCalc();
+    brownsStageAgeCalc();
+
 
     $("#plural").text(plural);
     $("#possInflection").text(possInflection);
@@ -214,5 +193,39 @@ function results() {
     $("#boundMorphemes").text(boundMorphemes);
     $("#mazeWords").text(mazeWords);
     $("#omittedWords").text(ommittedWords);
+    //Updates the webpage table with all the calculated values and scores
 
-}   
+}
+
+function parser() {
+    let fullDocument = document.getElementById("textBox").value;
+    //splits the text into an array for each line
+    let lines = fullDocument.split("\n");
+
+    // checks if each line is a child utterance or examiner utterance
+    lines.forEach(function (entry) {
+        numLines++;
+        if (entry.toLowerCase().charAt(0) == 'c' &&
+            entry.toLowerCase().charAt(entry.length - 1) != 'q' &&
+            entry.toLowerCase().charAt(entry.length - 2) != 'q') {
+            clientUtterances++; // increment child utterance
+            boundOmmittedMorphemeParser(entry); //checks for double morphemes
+            mazeWordCounter(entry);
+            actionStatementCounter(entry);
+
+            var clientMorphemePerLine = entry.split(" "); // counts total morphemes
+            //adds to the  child morpheme count per line and subtracts one to account for
+            //the speaker indication (examiner or child)
+            totalMorphemes += clientMorphemePerLine.length - 1;
+        }
+
+        else if (entry.toLowerCase().charAt(0) == 'e') {
+            examinerUtterances++;
+            // increments examiner utterances
+        }
+
+    });
+
+    results();
+    //calls on results after all components of the transcript are checked
+}
